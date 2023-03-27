@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* for text alignment  */
+.centertext{
+    text-align: justify;
+    /* justify-content: center; */
+}
+
+
+.line{
+    width: 7rem;
+    height: 0.2rem;
+    background-color: green;
+    justify-content: center;
+}
+.white-color{
+    color: white;
+}
+.list-solid,.opencart-brands, .bell-solid{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.color{
+    color: #26AB21;
+}
+.left-nav{
+    display: flex;
+}
+
+#logo{
+    width: 8rem;
+    height: 8rem;
+}
+.brand{
+    margin-top: 3rem;
+}
+.brand-name{
+    font-size: 2rem;
+    color: white;
+    /* padding-top: 2rem; */
+    /* border: 1px solid black; */
+}
+.header{
+    background-color: green;
+}
+
+.menu-bar div img{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 1rem;
+    /* color: white; */
+}
+.menu-bar div a{
+    color: white;
+    margin-right: 1.4rem;
+    margin-top: 0.7rem;
+}
+.menu-bar div a:hover{
+    color: white;
+}
+

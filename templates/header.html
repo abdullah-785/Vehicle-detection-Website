@@ -1,0 +1,45 @@
+
+<div class="header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+                <div class="col-xxl-6 col-xl-5 col-4 left-nav">
+                    <div><a href="#" class="navbar-brand"><img src="/static/images/logo.png" id="logo" alt="logo"> </a>
+                    </div>
+                    <div class="brand"><label class="brand-name">Vehicle Detection</label></div>
+                </div>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse align-items-center" id="navbarCollapse">
+                    <div class="navbar-nav menu-bar">
+                        <br><br><br>
+                        <div class="d-flex nav-item nav-link">
+                            <img src="/static/images/Menu/home.png" alt="Home">
+                            <a href="/" class="nav-item nav-link {% if request.path == '/'  %}  {% endif %} ">Home</a>
+                        </div>
+
+                        <div class="d-flex nav-item nav-link">
+                            <img src="/static/images/Menu/Store.png" alt="Store">
+                            <a href="/detection" class="nav-item nav-link {% if request.path == ''  %} active {% endif %} ">Detection</a>
+                        </div>
+
+                        <div class="d-flex nav-item nav-link">
+                            <img src="/static/images/Menu/about us.png" alt="About">
+                            <a href="/aboutus" class="nav-item nav-link">About Us</a>
+                        </div>
+
+                        <div class="d-flex nav-item nav-link">
+                            <img src="/static/images/Menu/login.png" alt="Login">
+                            <a href="/contactus" class="nav-item nav-link ">Contact Us</a>
+                        </div>
+
+                        <div class="d-flex nav-item nav-link ">
+                            <img src="/static/images/Menu/register.png" alt="Register">
+                            <a href="/login" class="nav-item nav-link {% if request.path == '' %} active {% endif %} ">Login</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </nav>
+</div>

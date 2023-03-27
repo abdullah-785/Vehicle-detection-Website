@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/aboutus.css">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="">
+        <img class="w-100" src="/static/images/contactusbanner.png" alt="">
+    </div>
+    <br><br><br><br>
+    <div class="row justify-content-center">
+        <h2 class="text-center">Contact US</h2>
+        <div class="line"></div>
+    </div>
+    <div class="container">
+        
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form action="" method="POST">
+                    <div>
+                        <label for="Name" class="">Name</label>
+                        <input class="form-control" type="text" name="name" placeholder="Enter your name" >
+                    </div>
+                    <div>
+                        <label for="Email">Email</label>
+                        <input class="form-control" type="text" name="email" placeholder="Enter your Email" >
+                    </div>
+                    <div>
+                        <label for="subject">Subject</label>
+                        <input class="form-control" type="text" name="subject" placeholder="Enter Subject" >
+                    </div>
+                    <div>
+                        <label for="Name">Message</label>
+                        <textarea class="form-control" rows="7" cols="" placeholder="Message"></textarea>
+                    </div>
+                    <br>
+                    <button class="ps-5 pe-5 rounded-2 pt-1 pb-1 border" style="background-color: green; color: white;" type="submit">Submit</button>
+                </form>
+            </div>
+            <!-- <div class="col-lg-4">
+                <img src="/static/images/contactusform2.png" alt="">
+            </div> -->
+        </div>
+    </div>
+    
+<br><br><br>
+    {% endblock %}
+</body>
+</html>
