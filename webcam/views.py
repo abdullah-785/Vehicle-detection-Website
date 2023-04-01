@@ -22,13 +22,13 @@ def detectionFunc(request):
 print(torch.cuda.is_available())
 print("Start model loading")
 #load model
-model = yolov5.load('yolov5s.pt')
-# model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
+model = yolov5.load('Yolov5_DeepSort_Pytorch/yolov5n.pt')
+# model = torch.hub.load('ultralytics/yolov5', 'yolov5n')
 device = select_device('') # 0 for gpu, '' for cpu
 # initialize deepsort
 cfg = get_config()
-cfg.merge_from_file("deep_sort/configs/deep_sort.yaml")
-deepsort = DeepSort('osnet_x0_25',
+cfg.merge_from_file("Yolov5_DeepSort_Pytorch/deep_sort/configs/deep_sort.yaml")
+deepsort = DeepSort('osnet_x0_75',
                     device,
                     max_dist=cfg.DEEPSORT.MAX_DIST,
                     max_iou_distance=cfg.DEEPSORT.MAX_IOU_DISTANCE,
@@ -38,10 +38,11 @@ deepsort = DeepSort('osnet_x0_25',
 names = model.module.names if hasattr(model, 'module') else model.names
 
 def stream():
+    # "Yolov5_DeepSort_Pytorch/videos/Traffic.mp4"
     cap = cv2.VideoCapture(0) 
     model.conf = 0.45
     model.iou = 0.5
-    model.classes = [0,64,39]
+    model.classes = [0,1,2,3,5,7]
     while True:
         ret, frame = cap.read()
         if not ret:
@@ -66,8 +67,9 @@ def stream():
 
                     c = int(cls)  # integer class
                     label = f'{id} {names[c]} {conf:.2f}'
-                    annotator.box_label(bboxes, label, color=colors(c, True))
-                    print(f'{id} {names[c]}')
+                    annotator.box_label(bboxes, label, color=colors(c, True)),
+                    print(f"{id} {names[c]} {conf:.2f}")
+
         else:
             deepsort.increment_ages()
 
