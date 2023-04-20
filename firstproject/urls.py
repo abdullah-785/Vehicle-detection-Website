@@ -19,12 +19,16 @@ from firstproject import view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', view.homePage),
+    path('home', view.homePage),
     path('login', view.login),
-    # path('detection', view.detection),
+    path('checklogin', view.checkLogin),
     path('detection', include('webcam.urls')),
     path('aboutus', view.aboutUs), 
     path('contactus', view.contactUs),
+    path('', view.signup),
+    path('postsignup', view.postsignup),
+    path('logout', view.log),
+
 
     
 ]
